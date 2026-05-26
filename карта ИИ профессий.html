@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта «ИИ-Профессии 2026: Куда зайти без технического опыта»</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1B1124',      // Глубокий премиальный темно-фиолетовый (для контрастного текста)
+                            darkPurple: '#2E1A47',// Вспомогательный темный
+                            accentPink: '#FF2E93',  // Яркий малиновый из референса
+                            accentViolet: '#8B5CF6',// Насыщенный фиолетовый
+                            accentBlue: '#00B4D8',  // Мягкий голубой
+                            teal: '#0D9488',
+                            lightBg: '#FFF5F8',    // Светло-розовый фон
+                        }
+                    },
+                    backgroundImage: {
+                        'premium-bg': 'radial-gradient(circle at top right, #FFF0F5 0%, #FFFFFF 50%, #F3EDFF 100%)',
+                        'gradient-glow': 'linear-gradient(135deg, #FF2E93 0%, #8B5CF6 50%, #00B4D8 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FFF5F8;
+            background-image: radial-gradient(circle at 50% 0%, #FFF0F6 0%, #FFFFFF 60%, #F5EFFF 100%);
+            color: #1B1124;
+        }
+        
+        /* Premium light glassmorphism / card style like screenshot */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 46, 147, 0.12);
+            box-shadow: 0 15px 35px -10px rgba(255, 46, 147, 0.06), 0 5px 15px -5px rgba(0, 0, 0, 0.02);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 46, 147, 0.3);
+            box-shadow: 0 25px 50px -15px rgba(255, 46, 147, 0.12);
+        }
+
+        /* Текстовые градиенты */
+        .text-neon-pink {
+            background: linear-gradient(135deg, #FF2E93 0%, #D81B60 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-neon-glow {
+            background: linear-gradient(135deg, #1B1124 30%, #FF2E93 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-neon-violet {
+            background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF5F8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF2E93;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D81B60;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <!-- HERO SCREEN -->
+    <header class="relative min-h-screen flex flex-col justify-center items-center px-4 py-24 text-center max-w-7xl mx-auto z-10">
+        <!-- Декоративные глянцевые сферы на фоне -->
+        <div class="absolute top-1/4 left-10 w-96 h-96 rounded-full bg-pink-200/40 blur-[120px] -z-10 pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-purple-200/30 blur-[150px] -z-10 pointer-events-none"></div>
+
+        <!-- Наклейка / Badge -->
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-pink-100 shadow-md mb-8">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-accentPink animate-pulse"></span>
+            <span class="text-xs md:text-sm font-bold tracking-wider text-brand-dark uppercase font-display">Мультимедийный карьерный атлас • 2026</span>
+        </div>
+        
+        <!-- Крупный заголовок -->
+        <h1 class="font-display text-5xl md:text-8xl font-black tracking-tight leading-none mb-4">
+            <span class="text-brand-dark">ИИ-ПРОФЕССИИ</span> <br>
+            <span class="text-neon-pink">2026</span>
+        </h1>
+        
+        <!-- Подзаголовок -->
+        <h2 class="font-display text-xl md:text-3xl font-bold text-gray-700 max-w-4xl mx-auto leading-snug mb-8">
+            Куда можно зайти без технического опыта
+        </h2>
+
+        <!-- Фирменная инфо-панель -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl w-full mb-12">
+            <div class="glass-card p-5 rounded-2xl text-center">
+                <span class="text-gray-500 text-xs uppercase font-bold block mb-1">Профессий в базе</span>
+                <span class="font-display text-2xl md:text-3xl font-black text-brand-accentViolet">20+</span>
+            </div>
+            <div class="glass-card p-5 rounded-2xl text-center">
+                <span class="text-gray-500 text-xs uppercase font-bold block mb-1">Без программирования</span>
+                <span class="font-display text-2xl md:text-3xl font-black text-brand-accentPink">100%</span>
+            </div>
+            <div class="glass-card p-5 rounded-2xl text-center">
+                <span class="text-gray-500 text-xs uppercase font-bold block mb-1">Старт на ИИ</span>
+                <span class="font-display text-2xl md:text-3xl font-black text-brand-dark">от 1 недели</span>
+            </div>
+            <div class="glass-card p-5 rounded-2xl text-center">
+                <span class="text-gray-500 text-xs uppercase font-bold block mb-1">Потенциал дохода</span>
+                <span class="font-display text-2xl md:text-3xl font-black text-emerald-600 font-bold">до 500к+ ₽</span>
+            </div>
+        </div>
+
+        <!-- Короткий хук -->
+        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
+            Не обязательно быть программистом, чтобы зарабатывать на ИИ. В 2026 рынок уже создал десятки ролей, куда можно зайти обычному человеку. Внутри — подробный разбор ролей, тест для выбора и калькулятор вашего дохода.
+        </p>
+
+        <!-- Навигационные кнопки -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md">
+            <a href="#map" class="w-full py-4 px-8 rounded-2xl bg-gradient-to-r from-brand-accentPink to-brand-accentViolet hover:opacity-90 text-white font-bold text-center font-display tracking-wide shadow-lg shadow-brand-accentPink/20 transition-all duration-300">
+                Открыть карту рынка
+            </a>
+            <a href="#test" class="w-full py-4 px-8 rounded-2xl bg-white hover:bg-slate-50 text-brand-dark font-bold text-center border border-pink-200 shadow-sm transition-all duration-300">
+                Пройти профориентацию
+            </a>
+        </div>
+    </header>
+
+    <!-- БЛОК 2. БОЛЬШАЯ КАРТА РЫНКА ИИ -->
+    <section id="map" class="py-24 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-brand-accentPink font-bold tracking-widest uppercase text-sm block mb-3 font-display">Карьерный навигатор</span>
+            <h2 class="font-display text-3xl md:text-5xl font-black text-brand-dark">КАРТА РЫНКА ИИ-ПРОФЕССИЙ 2026</h2>
+            <p class="text-slate-600 text-lg mt-4 max-w-2xl mx-auto">Инфографика карьерного роста и распределение ролей по уровню сложности и чеку</p>
+        </div>
+
+        <!-- Сетка уровней -->
+        <div class="grid lg:grid-cols-3 gap-8 items-stretch mb-16">
+            <!-- Уровень 1: Быстрый вход -->
+            <div class="glass-card p-8 rounded-[2rem] border-emerald-200 hover:border-emerald-300 transition-all relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 right-0 px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-bl-2xl text-xs font-bold uppercase font-display tracking-widest border-l border-b border-emerald-100">
+                    Easy entry
+                </div>
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-6 font-display font-black text-xl border border-emerald-100">
+                        01
+                    </div>
+                    <h3 class="font-display text-2xl font-black text-slate-900 mb-2">БЫСТРЫЙ ВХОД</h3>
+                    <p class="text-slate-600 text-sm mb-6">Освоение навыка за 1–3 недели. Минимальный порог. Старт без портфолио и бэкграунда.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">ИИ-контент специалист</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по Telegram-контенту</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по Reels на ИИ</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Создатель презентаций</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Создатель гайдов / PDF</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по карточкам товаров</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">ИИ-дизайнер</div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Доход</span>
+                    <span class="font-display font-black text-emerald-600">40 000 – 150 000 ₽</span>
+                </div>
+            </div>
+
+            <!-- Уровень 2: Средний уровень -->
+            <div class="glass-card p-8 rounded-[2rem] border-purple-200 hover:border-purple-300 transition-all relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 right-0 px-4 py-1.5 bg-purple-50 text-brand-accentViolet rounded-bl-2xl text-xs font-bold uppercase font-display tracking-widest border-l border-b border-purple-100">
+                    Pro-growth
+                </div>
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-brand-accentViolet mb-6 font-display font-black text-xl border border-purple-100">
+                        02
+                    </div>
+                    <h3 class="font-display text-2xl font-black text-slate-900 mb-2">СРЕДНИЙ УРОВЕНЬ</h3>
+                    <p class="text-slate-600 text-sm mb-6">Обучение за 3–6 недель. Комплексная упаковка, работа с воронками продаж, аналитика и маркетинг.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">ИИ-ассистент предпринимателя</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по исследованиям</div>
+                        <div class="p-3 bg-white/50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">ИИ-упаковщик экспертов</div>
+                        <div class="p-3 bg-white/50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по лендингам</div>
+                        <div class="p-3 bg-white/50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">ИИ-маркетолог</div>
+                        <div class="p-3 bg-white/50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по автоворонкам</div>
+                        <div class="p-3 bg-white/50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Создатель чат-ботов</div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Доход</span>
+                    <span class="font-display font-black text-brand-accentViolet">80 000 – 300 000 ₽</span>
+                </div>
+            </div>
+
+            <!-- Уровень 3: Высокий чек -->
+            <div class="glass-card p-8 rounded-[2rem] border-pink-200 hover:border-pink-300 transition-all relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 right-0 px-4 py-1.5 bg-pink-50 text-brand-accentPink rounded-bl-2xl text-xs font-bold uppercase font-display tracking-widest border-l border-b border-pink-100">
+                    Elite level
+                </div>
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-pink-50 flex items-center justify-center text-brand-accentPink mb-6 font-display font-black text-xl border border-pink-100">
+                        03
+                    </div>
+                    <h3 class="font-display text-2xl font-black text-slate-900 mb-2">ВЫСОКИЙ ЧЕК</h3>
+                    <p class="text-slate-600 text-sm mb-6">Сборка ИИ-агентов, автоматизация сложных цепочек и консалтинг. Требуется понимание системных процессов.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по ИИ-ботам</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по автоматизации бизнеса</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по GPT-агентам</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">ИИ-консультант</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">Специалист по обучению команд ИИ</div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-sm font-semibold text-slate-800 hover:border-brand-accentPink/30 transition-all">ИИ-продюсер</div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Доход</span>
+                    <span class="font-display font-black text-brand-accentPink">150 000 – 500 000+ ₽</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- КАРЬЕРНЫЕ ТРАЕКТОРИИ (Схема роста) -->
+        <div class="glass-card p-8 md:p-12 rounded-[2.5rem] border-pink-100">
+            <h3 class="font-display text-2xl md:text-3xl font-black text-slate-900 text-center mb-10">Проверенные карьерные маршруты</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-pink-50/30 rounded-2xl p-6 border border-pink-100/50">
+                    <div class="text-brand-accentPink font-bold text-sm mb-2 uppercase font-display tracking-widest">Маршрут «Продуктовый Смысловик»</div>
+                    <div class="text-slate-600 text-sm mb-6">Для тех, кто любит тексты, глубокий анализ информации и понятные смыслы.</div>
+                    
+                    <div class="space-y-4 relative">
+                        <!-- Линия коннектор -->
+                        <div class="absolute left-6 top-3 bottom-3 w-[2px] bg-gradient-to-b from-brand-accentPink to-brand-accentViolet"></div>
+                        
+                        <div class="flex gap-4 items-center relative z-10">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-brand-accentPink flex items-center justify-center font-bold text-sm text-brand-dark shadow-sm">01</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">ИИ-контент специалист</h4>
+                                <p class="text-xs text-slate-500">Пишет посты и сценарии</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center relative z-10">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-brand-accentPink/80 flex items-center justify-center font-bold text-sm text-brand-dark shadow-sm">02</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Специалист по Telegram-контенту</h4>
+                                <p class="text-xs text-slate-500">Ведет экспертные каналы под ключ</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center relative z-10">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-brand-accentViolet flex items-center justify-center font-bold text-sm text-brand-dark shadow-sm">03</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">ИИ-упаковщик экспертов</h4>
+                                <p class="text-xs text-slate-500">Проектирует вебинары, лид-магниты, воронки</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center relative z-10">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-brand-accentBlue flex items-center justify-center font-bold text-sm text-brand-dark shadow-sm">04</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">ИИ-продюсер</h4>
+                                <p class="text-xs text-slate-500">Запускает масштабные инфопродукты</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50/20 rounded-2xl p-6 border border-blue-100/50">
+                    <div class="text-brand-accentBlue font-bold text-sm mb-2 uppercase font-display tracking-widest">Маршрут «Бизнес-интегратор»</div>
+                    <div class="text-slate-600 text-sm mb-6">Для любителей порядка, логических цепочек, порядка и оптимизации хаоса.</div>
+                    
+                    <div class="space-y-4 relative">
+                        <!-- Линия коннектор -->
+                        <div class="absolute left-6 top-3 bottom-3 w-[2px] bg-gradient-to-b from-brand-accentBlue to-emerald-400"></div>
+                        
+                        <div class="flex gap-4 items-center relative z-10">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-brand-accentBlue flex items-center justify-center font-bold text-sm text-brand-dark shadow-sm">01</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">ИИ-ассистент предпринимателя</h4>
+                                <p class="text-xs text-slate-500">Систематизирует повседневную рутину</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center relative z-10">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-brand-accentBlue/80 flex items-center justify-center font-bold text-sm text-brand-dark shadow-sm">02</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Специалист по автоматизации</h4>
+                                <p class="text-xs text-slate-500">Соединяет базы данных и автоматизирует переписки</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center relative z-10">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-emerald-400 flex items-center justify-center font-bold text-sm text-brand-dark shadow-sm">03</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Специалист по GPT-агентам</h4>
+                                <p class="text-xs text-slate-500">Создает виртуальных сотрудников в компании</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center relative z-10">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-brand-accentPink flex items-center justify-center font-bold text-sm text-brand-dark shadow-sm">04</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">ИИ-консультант / Тренер</h4>
+                                <p class="text-xs text-slate-500">Масштабирует и внедряет ИИ в командах</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 3. ПОДРОБНЫЙ АТЛАС ПРОФЕССИЙ -->
+    <section class="py-24 px-4 bg-white/60 border-t border-b border-pink-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-brand-accentViolet font-bold tracking-widest uppercase text-sm block mb-3 font-display">Энциклопедия компетенций</span>
+                <h2 class="font-display text-3xl md:text-5xl font-black text-brand-dark">ПОДРОБНЫЙ АТЛАС ПРОФЕССИЙ</h2>
+                <p class="text-slate-600 text-lg mt-4 max-w-2xl mx-auto">Полноценный разбор каждой роли — без воды, с детальным анализом ежедневных задач, чеков и карьерных рисков.</p>
+                
+                <!-- Прогресс панель для переключения -->
+                <div class="flex flex-wrap gap-2 justify-center mt-8 max-w-4xl mx-auto">
+                    <button onclick="scrollToProfession('prof-1')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">1. Контент</button>
+                    <button onclick="scrollToProfession('prof-2')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">2. Telegram</button>
+                    <button onclick="scrollToProfession('prof-3')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">3. Reels</button>
+                    <button onclick="scrollToProfession('prof-4')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">4. Презентации</button>
+                    <button onclick="scrollToProfession('prof-5')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">5. Гайды/PDF</button>
+                    <button onclick="scrollToProfession('prof-6')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">6. Карточки</button>
+                    <button onclick="scrollToProfession('prof-7')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">7. Дизайнер</button>
+                    <button onclick="scrollToProfession('prof-8')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">8. Ассистент</button>
+                    <button onclick="scrollToProfession('prof-9')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">9. Исследования</button>
+                    <button onclick="scrollToProfession('prof-10')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">10. Упаковщик</button>
+                    <button onclick="scrollToProfession('prof-11')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">11. Лендинги</button>
+                    <button onclick="scrollToProfession('prof-12')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">12. Маркетолог</button>
+                    <button onclick="scrollToProfession('prof-13')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">13. Автоворонки</button>
+                    <button onclick="scrollToProfession('prof-14')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">14. Чат-боты</button>
+                    <button onclick="scrollToProfession('prof-15')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">15. ИИ-боты</button>
+                    <button onclick="scrollToProfession('prof-16')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">16. Автоматизация</button>
+                    <button onclick="scrollToProfession('prof-17')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">17. GPT-агенты</button>
+                    <button onclick="scrollToProfession('prof-18')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">18. ИИ-консультант</button>
+                    <button onclick="scrollToProfession('prof-19')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">19. Обучение команд</button>
+                    <button onclick="scrollToProfession('prof-20')" class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-700 text-sm font-semibold hover:bg-brand-accentPink hover:text-white hover:border-brand-accentPink transition-all shadow-sm">20. ИИ-продюсер</button>
+                </div>
+            </div>
+
+            <!-- Контейнер для подробных карточек -->
+            <div id="professions-container" class="space-y-16">
+                <!-- Карточки генерируются динамически с помощью JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 4. ИНТЕРАКТИВНЫЙ ТЕСТ -->
+    <section id="test" class="py-24 px-4 max-w-4xl mx-auto">
+        <div class="glass-card rounded-[3rem] p-8 md:p-12 border border-brand-accentPink/20 shadow-xl relative overflow-hidden">
+            <!-- Световой фоновый эффект -->
+            <div class="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-pink-100 blur-[80px] pointer-events-none"></div>
+            
+            <div class="relative z-10">
+                <div class="text-center mb-10">
+                    <span class="text-brand-accentPink font-bold tracking-widest uppercase text-xs block mb-2 font-display">Умный профориентатор</span>
+                    <h2 class="font-display text-2xl md:text-4xl font-black text-brand-dark">ТЕСТ: Какая ИИ-профессия вам подходит?</h2>
+                    <p class="text-slate-600 text-sm md:text-base mt-2">Ответьте на 15 вопросов, чтобы получить индивидуальный разбор и персональный карьерный трек.</p>
+                </div>
+
+                <!-- Контейнер теста -->
+                <div id="quiz-container">
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-pink-50 rounded-full h-2 mb-8 relative border border-pink-100">
+                        <div id="quiz-progress" class="bg-gradient-to-r from-brand-accentPink to-brand-accentViolet h-2 rounded-full transition-all duration-300" style="width: 6.6%"></div>
+                    </div>
+
+                    <!-- Вопрос -->
+                    <div id="question-block" class="min-h-[250px] flex flex-col justify-between">
+                        <div>
+                            <span id="question-number" class="text-brand-accentPink font-bold text-sm tracking-widest uppercase block mb-3 font-display">Вопрос 1 из 15</span>
+                            <h3 id="question-text" class="font-display text-lg md:text-xl font-bold text-slate-800 leading-relaxed mb-6">Какая сфера работы вам эмоционально ближе всего?</h3>
+                        </div>
+
+                        <!-- Варианты ответов -->
+                        <div id="options-block" class="grid gap-3">
+                            <!-- Кнопки вариантов генерируются динамически -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Результат теста -->
+                <div id="result-block" class="hidden">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 mx-auto mb-4 border border-emerald-100 shadow-sm">
+                            <i data-lucide="check-circle" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="font-display text-3xl font-black text-brand-dark">Анализ завершен!</h3>
+                        <p class="text-slate-600 mt-2">Мы подобрали оптимальную роль на основе ваших предпочтений.</p>
+                    </div>
+
+                    <div class="p-6 md:p-8 bg-slate-50/50 rounded-2xl border border-pink-100 mb-8 shadow-inner">
+                        <span class="text-brand-accentPink font-bold text-xs uppercase tracking-widest block mb-2 font-display">Рекомендуемая профессия</span>
+                        <h4 id="result-title" class="font-display text-2xl md:text-3xl font-black text-slate-900 mb-4">ИИ-упаковщик экспертов</h4>
+                        
+                        <div id="result-description" class="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
+                            <!-- Описание -->
+                        </div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6 pt-6 border-t border-pink-100">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Потенциал дохода</span>
+                                <span id="result-income" class="font-extrabold text-slate-900 text-lg font-display">80 000 - 250 000 ₽</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">Сложность старта</span>
+                                <span id="result-difficulty" class="font-extrabold text-slate-900 text-lg font-display">Низкая</span>
+                            </div>
+                            <div class="col-span-2 md:col-span-1">
+                                <span class="text-xs text-slate-400 block">Маршрут обучения</span>
+                                <span id="result-route" class="font-extrabold text-brand-accentViolet text-xs block font-display">Тексты → Воронки → Упаковка</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="resetQuiz()" class="w-full py-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold font-display border border-slate-200 transition-all">
+                            Пройти заново
+                        </button>
+                        <a id="result-action-link" href="#prof-10" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-accentPink to-brand-accentViolet text-white font-bold font-display text-center transition-all shadow-md">
+                            Подробнее о профессии
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 5. МИНИ-КАЛЬКУЛЯТОР ДОХОДОВ -->
+    <section class="py-24 px-4 bg-white/40 border-t border-b border-pink-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card rounded-[3rem] p-8 md:p-12 border border-pink-200 shadow-xl relative">
+                <div class="text-center mb-10">
+                    <span class="text-brand-accentViolet font-bold tracking-widest uppercase text-xs block mb-2 font-display">Прогнозирование заработка</span>
+                    <h2 class="font-display text-2xl md:text-4xl font-black text-brand-dark">Интерактивный калькулятор дохода</h2>
+                    <p class="text-slate-600 text-sm">Посчитайте, сколько вы сможете зарабатывать в 2026 году при разной нагрузке.</p>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Ползунок 1: Стоимость одной услуги -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="text-sm font-semibold text-slate-700">Средний чек за проект/клиента (₽)</label>
+                            <span id="calc-check-display" class="font-display font-black text-brand-accentPink text-lg">35 000 ₽</span>
+                        </div>
+                        <input id="calc-check" type="range" min="15000" max="150000" step="5000" value="35000" oninput="updateCalculator()" class="w-full h-2 bg-pink-100 rounded-lg appearance-none cursor-pointer accent-brand-accentPink border border-pink-200">
+                        <div class="flex justify-between text-xs text-slate-400 mt-2">
+                            <span>15 000 ₽</span>
+                            <span>80 000 ₽</span>
+                            <span>150 000 ₽</span>
+                        </div>
+                    </div>
+
+                    <!-- Ползунок 2: Количество проектов в месяц -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="text-sm font-semibold text-slate-700">Количество проектов/клиентов в месяц</label>
+                            <span id="calc-projects-display" class="font-display font-black text-brand-accentViolet text-lg">3</span>
+                        </div>
+                        <input id="calc-projects" type="range" min="1" max="15" step="1" value="3" oninput="updateCalculator()" class="w-full h-2 bg-pink-100 rounded-lg appearance-none cursor-pointer accent-brand-accentViolet border border-pink-200">
+                        <div class="flex justify-between text-xs text-slate-400 mt-2">
+                            <span>1 проект</span>
+                            <span>8 проектов</span>
+                            <span>15 проектов</span>
+                        </div>
+                    </div>
+
+                    <!-- Результаты сценариев -->
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-pink-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div class="text-center md:text-left">
+                            <span class="text-xs text-slate-500 font-bold uppercase tracking-wider block mb-1">Ваш расчетный ежемесячный доход</span>
+                            <span id="calc-total" class="font-display text-4xl md:text-5xl font-black text-brand-accentPink">105 000 ₽</span>
+                        </div>
+                        
+                        <div class="w-full md:w-1/2 space-y-2">
+                            <div class="flex justify-between text-xs text-slate-600">
+                                <span>Реалистичный сценарий (80% времени свободно):</span>
+                                <span id="calc-scen-1" class="font-bold text-slate-900">105 000 ₽</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-1.5 rounded-full">
+                                <div class="bg-brand-accentPink h-1.5 rounded-full" style="width: 50%"></div>
+                            </div>
+
+                            <div class="flex justify-between text-xs text-slate-600 pt-2">
+                                <span>Интенсивный сценарий (полный день):</span>
+                                <span id="calc-scen-2" class="font-bold text-brand-accentViolet">210 000 ₽</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-1.5 rounded-full">
+                                <div class="bg-brand-accentViolet h-1.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 6. ЧТО ВАМ НЕ ПОДХОДИТ -->
+    <section class="py-24 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-brand-accentPink font-bold tracking-widest uppercase text-xs block mb-2 font-display">Анти-рекомендации</span>
+            <h2 class="font-display text-2xl md:text-4xl font-black text-brand-dark">ЧТО ВАМ НЕ ПОДХОДИТ И КУДА ИДТИ НЕ НАДО</h2>
+            <p class="text-slate-600 text-sm mt-2">Честные предупреждения, чтобы уберечь вас от потери времени и эмоционального выгорания.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card p-6 rounded-2xl border-red-200">
+                <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-500 mb-4 border border-red-100">
+                    <i data-lucide="frown" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Ненавидите писать тексты?</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Держитесь подальше от <strong>ИИ-контента</strong>, ведения <strong>Telegram-каналов</strong> и создания <strong>сценариев</strong>. ИИ не сделает за вас 100% редактуры, если у вас нет базового языкового чутья.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border-red-200">
+                <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-500 mb-4 border border-red-100">
+                    <i data-lucide="frown" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Раздражает монотонная рутина?</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Вам категорически не подойдет профессия <strong>ИИ-ассистента предпринимателя</strong> или <strong>специалиста по исследованиям</strong>. Там критически важна усидчивость.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border-red-200">
+                <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-500 mb-4 border border-red-100">
+                    <i data-lucide="frown" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Боитесь настраивать сервисы?</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">Не суйтесь в разработку <strong>ИИ-ботов</strong>, <strong>автоматизацию бизнеса</strong> или сборку сложных <strong>GPT-агентов</strong>. Начните с простых смысловых или визуальных задач.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 8. РАЗВЕНЧИВАНИЕ МИФОВ -->
+    <section class="py-24 px-4 bg-white/40 border-t border-b border-pink-100">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-2xl md:text-4xl font-black text-brand-dark">ГЛАВНЫЕ МИФЫ ОБ ИИ В 2026 ГОДУ</h2>
+                <p class="text-slate-600 text-sm mt-2">Разделяем реальность рынка от инфоцыганских иллюзий и необоснованных страхов.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl border-pink-100 relative">
+                    <span class="text-red-500 font-bold uppercase text-xs tracking-widest block mb-2 font-display">❌ Миф 1</span>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-4">«Нужно уметь кодить или иметь техническое образование»</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed"><strong>Реальность:</strong> В 2026 году ИИ общается на естественном человеческом языке. Главный навык — умение четко структурировать ТЗ и понимать логику процессов, а не писать синтаксический код.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-pink-100 relative">
+                    <span class="text-red-500 font-bold uppercase text-xs tracking-widest block mb-2 font-display">❌ Миф 2</span>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-4">«Рынок переполнен, все ниши заняты»</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed"><strong>Реальность:</strong> Большинство предпринимателей до сих пор используют ChatGPT просто как умный поисковик. Специалистов, способных упаковать результат в бизнес-процесс, критически не хватает.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-pink-100 relative">
+                    <span class="text-red-500 font-bold uppercase text-xs tracking-widest block mb-2 font-display">❌ Миф 3</span>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-4">«Нужно знать все ИИ-инструменты сразу»</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed"><strong>Реальность:</strong> Это гарантирует только кашу в голове. Достаточно виртуозно владеть парой связок (например, ChatGPT + Canva), чтобы зарабатывать стабильные деньги.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-pink-100 relative">
+                    <span class="text-red-500 font-bold uppercase text-xs tracking-widest block mb-2 font-display">❌ Миф 4</span>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-4">«ИИ заменяет людей в ближайший год»</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed"><strong>Реальность:</strong> ИИ заменяет только тех, кто работает медленно и по шаблонам. Человек, умеющий управлять ИИ-инструментами, становится супер-эффективным юнитом, которого компания удерживает любой ценой.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФИНАЛЬНЫЙ БЛОК -->
+    <footer class="py-24 px-4 text-center max-w-5xl mx-auto z-10 relative">
+        <h2 class="font-display text-4xl md:text-7xl font-black text-brand-dark leading-tight mb-8">
+            Войти в ИИ можно <br class="hidden md:block">
+            <span class="text-neon-pink">без технического опыта</span>
+        </h2>
+        
+        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
+            Главное — не пытаться изучить всё одновременно. Выберите одно понятное направление, соберите первый проект и начните монетизировать свои новые навыки.
+        </p>
+
+        <!-- Подвал -->
+        <div class="pt-12 border-t border-pink-100 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-400">
+            <div>© 2026 Мультимедийный Карьерный Атлас ИИ. Все права защищены.</div>
+            <div>Сделано специально для участников эфира Ксении Барановой.</div>
+        </div>
+    </footer>
+
+    <!-- JS ДЛЯ ГЕНЕРАЦИИ ДАННЫХ И ИНТЕРАКТИВА -->
+    <script>
+        // ДАННЫЕ АТЛАСА ИИ-ПРОФЕССИЙ (20 профессий, 20 пунктов описания на каждую)
+        const professions = [
+            {
+                id: "prof-1",
+                name: "ИИ-контент специалист",
+                level: "Уровень 1. Быстрый вход",
+                tagColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
+                points: {
+                    desc: "Специалист, создающий текстовый и мультимедийный контент для блогов, брендов и экспертов с помощью нейросетей.",
+                    dailyTasks: "Генерация контент-планов, написание постов под разные tone of voice, адаптация текстов под разные форматы.",
+                    whyPaid: "Компании экономят бюджет на штате копирайтеров и ускоряют выпуск публикаций в 5-10 раз.",
+                    whatToSell: "Контент-пакеты, регулярный постинг, прогревающие воронки.",
+                    examples: "Пакет из 30 постов для косметолога за 15 000 руб.",
+                    avgCheck: "15 000 — 50 000 ₽",
+                    incomePotential: "40 000 — 120 000 ₽",
+                    timeToMoney: "1-2 недели",
+                    tools: "ChatGPT, Claude, Notion AI",
+                    clientsWhere: "Биржи фриланса, Telegram-каналы вакансий, холодная рассылка по экспертам.",
+                    whoFits: "Копирайтеры, SMM-специалисты, новички без опыта.",
+                    whoNotFits: "Люди, которые не переносят чтение и рутинную вычитку текстов.",
+                    difficulty: "Очень низкая",
+                    fastStart: "Зарегистрируйтесь в Claude, сгенерируйте первый пак постов для вымышленного бренда, упакуйте в кейс.",
+                    realTask: "Клиенту нужен прогрев для курса по йоге на 14 дней в определенном доверительном стиле.",
+                    pros: "Быстрый старт, минимальные требования, высокая востребованность.",
+                    cons: "Высокая базовая конкуренция на самом дешевом сегменте фриланса.",
+                    careerPath: "Контент-специалист -> Telegram-менеджер -> ИИ-упаковщик.",
+                    dayRoutine: "30 минут на генерацию промптов, 2 часа на доработку текстов, 1 час на общение с заказчиками.",
+                    studyFirst: "Изучите основы написания текстовых промптов (system prompts) и ролевую модель ИИ."
+                }
+            },
+            {
+                id: "prof-2",
+                name: "Специалист по Telegram-контенту",
+                level: "Уровень 1. Быстрый вход",
+                tagColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
+                points: {
+                    desc: "Профессионал, упаковывающий и ведущий Telegram-каналы экспертов с использованием нейросетей.",
+                    dailyTasks: "Генерация лид-магнитов, интерактивных опросов, оформление и верстка постов, планирование контент-сетки.",
+                    whyPaid: "Telegram — главный инструмент продаж в РФ. Эксперты не успевают сами генерировать тонны смыслов.",
+                    whatToSell: "Ведение канала под ключ, запуск прогревов, создание лонгридов.",
+                    examples: "Месячное ведение канала психолога — 35 000 руб.",
+                    avgCheck: "25 000 — 60 000 ₽",
+                    incomePotential: "60 000 — 150 000 ₽",
+                    timeToMoney: "2 недели",
+                    tools: "ChatGPT, Claude, TGStat",
+                    clientsWhere: "Профильные чаты экспертов, инфопредприниматели, авторы блогов.",
+                    whoFits: "Администраторы каналов, бывшие журналисты, любители лаконичных текстов.",
+                    whoNotFits: "Те, кто не следит за трендами и новостной повесткой.",
+                    difficulty: "Низкая",
+                    fastStart: "Создайте тестовый канал, оформите его через ИИ, выложите 5 постов разного типа.",
+                    realTask: "Сделать запуск мини-интенсива через 5 прогревающих постов в канале про инвестиции.",
+                    pros: "Постоянные клиенты на абонентской плате.",
+                    cons: "Необходимость быть на связи и следить за комментариями.",
+                    careerPath: "Telegram-специалист -> Продюсер каналов -> ИИ-маркетолог.",
+                    dayRoutine: "Мониторинг инфоповодов, генерация драфтов, согласование с экспертом, публикация.",
+                    studyFirst: "Изучите форматы Telegram-верстки и особенности удержания внимания аудитории."
+                }
+            },
+            {
+                id: "prof-3",
+                name: "Специалист по Reels на ИИ",
+                level: "Уровень 1. Быстрый вход",
+                tagColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
+                points: {
+                    desc: "Создатель вирусного короткого видеоконтента (Reels/Shorts/TikTok) с использованием генеративных ИИ-видеогенераторов.",
+                    dailyTasks: "Написание сценариев, генерация озвучки, подбор визуального ряда через ИИ-генераторы, монтаж.",
+                    whyPaid: "Короткие видео дают тонны бесплатного органического трафика, но требуют регулярности.",
+                    whatToSell: "Пакет из 15-30 готовых роликов со сценариями и субтитрами.",
+                    examples: "Создание 15 ИИ-Reels для бренда мебели — 30 000 руб.",
+                    avgCheck: "20 000 — 60 000 ₽",
+                    incomePotential: "50 000 — 180 000 ₽",
+                    timeToMoney: "2-3 недели",
+                    tools: "ChatGPT, Runway, ElevenLabs, CapCut",
+                    clientsWhere: "Бренды одежды, эксперты, бьюти-сфера, онлайн-школы.",
+                    whoFits: "Монтажеры, визуализаторы, креативщики.",
+                    whoNotFits: "Люди с полным отсутствием визуального вкуса и чувства динамики монтажа.",
+                    difficulty: "Низкая",
+                    fastStart: "Сделайте 5 красивых роликов с ИИ-озвучкой и выложите в свой аккаунт как портфолио.",
+                    realTask: "Создать цепляющий 15-секундный ролик с ИИ-персонажем для рекламы курса английского.",
+                    pros: "Огромный неудовлетворенный спрос со стороны бизнеса на дешевый видеоконтент.",
+                    cons: "Видеогенерация требует мощного ПК или платных подписок на ИИ-сервисы.",
+                    careerPath: "Reels-мейкер -> Креативный директор -> ИИ-продюсер.",
+                    dayRoutine: "Написание сценариев в ChatGPT, генерация голоса в ElevenLabs, сборка видеоряда в CapCut.",
+                    studyFirst: "Поймите правила удержания внимания на первых 3 секундах видео."
+                }
+            },
+            {
+                id: "prof-4",
+                name: "Создатель презентаций через ИИ",
+                level: "Уровень 1. Быстрый вход",
+                tagColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
+                points: {
+                    desc: "Специалист, разрабатывающий коммерческие, учебные и инвестиционные презентации с помощью ИИ-инструментов верстки.",
+                    dailyTasks: "Структурирование слайдов, написание текстов, генерация иллюстраций, экспорт в PDF.",
+                    whyPaid: "Презентации продают идеи и продукты. Менеджеры ненавидят тратить часы на выравнивание блоков в PowerPoint.",
+                    whatToSell: "Разработка структуры презентации, редизайн старых презентаций.",
+                    examples: "Инвестиционная презентация стартапа на 10 слайдов — 25 000 руб.",
+                    avgCheck: "10 000 — 40 000 ₽",
+                    incomePotential: "40 000 — 120 000 ₽",
+                    timeToMoney: "1 неделя",
+                    tools: "Gamma App, ChatGPT, Midjourney, Canva",
+                    clientsWhere: "Стартапы, спикеры конференций, корпоративные менеджеры.",
+                    whoFits: "Студенты, аналитики, начинающие дизайнеры.",
+                    whoNotFits: "Люди, которые путают логику повествования и перегружают слайды тонной мелкого текста.",
+                    difficulty: "Очень низкая",
+                    fastStart: "Изучите Gamma App, соберите коммерческое предложение для любого локального бизнеса.",
+                    realTask: "Переформатировать хаотичный текстовый документ компании в стильный PDF-кит для партнеров.",
+                    pros: "Работа занимает считанные часы при использовании правильных ИИ-плагинов.",
+                    cons: "Жесткие рамки корпоративного стиля у некоторых заказчиков.",
+                    careerPath: "Создатель презентаций -> ИИ-дизайнер -> Упаковщик экспертов.",
+                    dayRoutine: "Набросок логики в Notion, генерация стилей в Gamma, кастомизация деталей.",
+                    studyFirst: "Освойте принципы минималистичного дизайна и визуальной иерархии."
+                }
+            },
+            {
+                id: "prof-5",
+                name: "Создатель гайдов / PDF продуктов",
+                level: "Уровень 1. Быстрый вход",
+                tagColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
+                points: {
+                    desc: "Дизайнер лид-магнитов, рабочих тетрадей, чек-листов и текстовых инфопродуктов.",
+                    dailyTasks: "Написание лонгридов с помощью ИИ, разбивка на логические блоки, верстка стильных страниц.",
+                    whyPaid: "Качественный бесплатный лид-магнит — ключевой элемент привлечения клиентов в базу экспертов.",
+                    whatToSell: "Комплексное создание линейки бесплатных гайдов под ключ.",
+                    examples: "Пакет из 3 гайдов для фитнес-тренера — 12 000 руб.",
+                    avgCheck: "8 000 — 25 000 ₽",
+                    incomePotential: "35 000 — 90 000 ₽",
+                    timeToMoney: "1-2 недели",
+                    tools: "ChatGPT, Gamma, Canva, Midjourney",
+                    clientsWhere: "Инфобизнесмены, блогеры, репетиторы, частные мастера.",
+                    whoFits: "Те, кто любит красивое оформление документов и списки.",
+                    whoNotFits: "Люди, не умеющие проверять факты и допускающие грамматические ошибки.",
+                    difficulty: "Очень низкая",
+                    fastStart: "Создайте гайд «10 способов использовать ИИ в быту» и оформите его в Gamma за полчаса.",
+                    realTask: "Сделать PDF-книгу рецептов для диетолога с красивыми иллюстрациями блюд.",
+                    pros: "Простая и понятная услуга, которую легко объяснить заказчику.",
+                    cons: "Сравнительно невысокий чек за разовую единицу работы.",
+                    careerPath: "Создатель гайдов -> ИИ-дизайнер -> Создатель мини-продуктов.",
+                    dayRoutine: "Сбор контента через ChatGPT, подбор картинок, верстка в шаблоне, экспорт.",
+                    studyFirst: "Изучите основы типографики и сочетания цветов."
+                }
+            },
+            {
+                id: "prof-6",
+                name: "Специалист по карточкам товаров",
+                level: "Уровень 1. Быстрый вход",
+                tagColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
+                points: {
+                    desc: "Специалист, создающий инфографику и ИИ-дизайн карточек товаров для маркетплейсов (Wildberries, Ozon, Яндекс.Маркет).",
+                    dailyTasks: "Замена фона на профессиональный студийный, добавление инфографики со свойствами товара.",
+                    whyPaid: "Продажи на маркетплейсах зависят от главного фото на 80%. ИИ делает фотосессии товаров за копейки.",
+                    whatToSell: "Разработка дизайна карточки, пак фото товара в разных интерьерах.",
+                    examples: "Пакет из 5 слайдов для одного товара — 5 000 руб.",
+                    avgCheck: "5 000 — 30 000 ₽",
+                    incomePotential: "45 000 — 130 000 ₽",
+                    timeToMoney: "1-2 недели",
+                    tools: "Midjourney (Inpaint), PhotoRoom, Canva",
+                    clientsWhere: "Селлеры Wildberries/Ozon, группы поставщиков, чаты маркетплейсов.",
+                    whoFits: "Начинающие графические дизайнеры, ретушеры.",
+                    whoNotFits: "Люди, не понимающие психологию покупателей масс-маркета.",
+                    difficulty: "Низкая",
+                    fastStart: "Возьмите фото любого предмета дома, сотрите фон, впишите в стильный ИИ-интерьер, добавьте плашки.",
+                    realTask: "Поместить фото термокружки на фоне заснеженных гор с паром и продающими надписями.",
+                    pros: "Огромный поток заказов, постоянное обновление товарных линеек у селлеров.",
+                    cons: "Высокая скорость работы и правки от капризных заказчиков.",
+                    careerPath: "Дизайнер карточек -> ИИ-дизайнер брендов -> ИИ-маркетолог.",
+                    dayRoutine: "Генерация фонов, наложение объектов, добавление текста, выгрузка.",
+                    studyFirst: "Изучите основы композиции и правила маркетплейсов по оформлению карточек."
+                }
+            },
+            {
+                id: "prof-7",
+                name: "ИИ-дизайнер",
+                level: "Уровень 1. Быстрый вход",
+                tagColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
+                points: {
+                    desc: "Креатор широкого профиля, создающий иллюстрации, логотипы, элементы брендинга и концепт-арты.",
+                    dailyTasks: "Генерация уникальной графики, стилизация под брендбук, апскейл изображений до высокого качества.",
+                    whyPaid: "Обычные дизайнеры рисуют иллюстрации днями, ИИ-дизайнер выдает десятки концептов за час.",
+                    whatToSell: "Создание пакетов иллюстраций для сайтов, логотипов, маскотов бренда.",
+                    examples: "Разработка концепции логотипа и фирменного стиля — 20 000 руб.",
+                    avgCheck: "15 000 — 50 000 ₽",
+                    incomePotential: "50 000 — 160 000 ₽",
+                    timeToMoney: "2 недели",
+                    tools: "Midjourney, Stable Diffusion, Magnific AI, Photoshop AI",
+                    clientsWhere: "Дизайн-студии, стартапы, рестораны, организаторы мероприятий.",
+                    whoFits: "Художники, фотографы, визуальные эстеты.",
+                    whoNotFits: "Те, кто не готов часами подбирать нужный промпт ради идеальной детализации.",
+                    difficulty: "Низкая",
+                    fastStart: "Освойте промптинг в Midjourney по параметрам стиля, освещения и ракурса.",
+                    realTask: "Создать серию футуристических артов для оформления интерьера кофейни.",
+                    pros: "Полная свобода творчества, эстетическое удовольствие от процесса.",
+                    cons: "Иногда сложно добиться от ИИ точного позиционирования мелких деталей.",
+                    careerPath: "ИИ-дизайнер -> Арт-директор ИИ-проектов.",
+                    dayRoutine: "Генерация вариантов, базовая ретушь, увеличение разрешения, презентация концептов.",
+                    studyFirst: "Уделите внимание параметрам настройки камер, свету и художественным стилям."
+                }
+            },
+            {
+                id: "prof-8",
+                name: "ИИ-ассистент предпринимателя",
+                level: "Уровень 2. Средний уровень",
+                tagColor: "bg-purple-50 text-brand-accentViolet border-purple-200",
+                points: {
+                    desc: "Правая рука владельца бизнеса, оптимизирующая процессы планирования, анализа конкурентов и переписки через ИИ.",
+                    dailyTasks: "Саммаризация длинных созвонов, ведение календаря, составление писем, первичный анализ отчетов.",
+                    whyPaid: "Предприниматели тонут в рутине. ИИ-ассистент заменяет троих обычных секретарей по скорости.",
+                    whatToSell: "Ежемесячное абонентское сопровождение операционных процессов.",
+                    examples: "Ассистирование владельца рекламного агентства — 45 000 руб/мес.",
+                    avgCheck: "30 000 — 70 000 ₽",
+                    incomePotential: "60 000 — 150 000 ₽",
+                    timeToMoney: "2-3 недели",
+                    tools: "ChatGPT, Notion, Whisper (для транскрипции), Google Workspace",
+                    clientsWhere: "Бизнес-клубы, инфопредприниматели, руководители отделов продаж.",
+                    whoFits: "Организованные люди, администраторы, бывшие секретари.",
+                    whoNotFits: "Хаотичные творческие личности, забывающие про дедлайны.",
+                    difficulty: "Средняя",
+                    fastStart: "Научитесь делать транскрипцию аудио созвонов и выжимать из них суть (action items) за 5 минут через ChatGPT.",
+                    realTask: "Прослушать 2 часа созвона команды, выписать ключевые задачи с дедлайнами и разослать всем участникам.",
+                    pros: "Стабильный долгосрочный доход, близкий контакт с предпринимателями (связи).",
+                    cons: "Ненормированный рабочий день у некоторых заказчиков.",
+                    careerPath: "ИИ-ассистент -> Операционный директор -> ИИ-консультант.",
+                    dayRoutine: "Организация почты, подготовка отчетов через ИИ, ведение задач в Trello/Notion.",
+                    studyFirst: "Изучите техники тайм-менеджмента и инструменты быстрой обработки больших текстов."
+                }
+            },
+            {
+                id: "prof-9",
+                name: "Специалист по ИИ-исследованиям",
+                level: "Уровень 2. Средний уровень",
+                tagColor: "bg-purple-50 text-brand-accentViolet border-purple-200",
+                points: {
+                    desc: "Аналитик, собирающий и структурирующий маркетинговые данные, информацию о конкурентах и трендах с помощью ИИ.",
+                    dailyTasks: "Парсинг отзывов, анализ целевой аудитории (СustDev), поиск бенчмарков, подготовка аналитических отчетов.",
+                    whyPaid: "Бизнесу нужны данные для запуска продуктов. Ручной анализ занимает недели, ИИ делает его за пару часов.",
+                    whatToSell: "Комплексный анализ рынка перед запуском, исследование конкурентов.",
+                    examples: "Маркетинговый анализ рынка доставки здоровой еды — 35 000 руб.",
+                    avgCheck: "20 000 — 60 000 ₽",
+                    incomePotential: "70 000 — 160 000 ₽",
+                    timeToMoney: "3 недели",
+                    tools: "ChatGPT with Web Search, Claude, Perplexity Pro",
+                    clientsWhere: "Стартапы, продакт-менеджеры, маркетинговые агентства.",
+                    whoFits: "Люди с аналитическим складом ума, маркетологи, социологи.",
+                    whoNotFits: "Те, кто не любит работать с цифрами и таблицами.",
+                    difficulty: "Средняя",
+                    fastStart: "Изучите поисковые промпты в Perplexity, соберите глубокий отчет по любому растущему рынку.",
+                    realTask: "Выявить основные боли и возражения покупателей детских колясок на основе 500 отзывов.",
+                    pros: "Высокая ценность результата для бизнеса, экспертный статус.",
+                    cons: "Требует перепроверки данных (ИИ может галлюцинировать).",
+                    careerPath: "ИИ-аналитик -> Маркетинг-директор -> ИИ-консультант.",
+                    dayRoutine: "Формулирование гипотез, сбор данных через ИИ, структурирование выводов, оформление отчета.",
+                    studyFirst: "Освойте основы маркетингового анализа и методологию CustDev."
+                }
+            },
+            {
+                id: "prof-10",
+                name: "ИИ-упаковщик экспертов",
+                level: "Уровень 2. Средний уровень",
+                tagColor: "bg-purple-50 text-brand-accentViolet border-purple-200",
+                points: {
+                    desc: "Специалист, превращающий знания эксперта в готовую систему продаж: воронки, лид-магниты, вебинары.",
+                    dailyTasks: "Распаковка смыслов эксперта, проектирование продуктовой матрицы, генерация прототипов лендингов.",
+                    whyPaid: "Эксперты круты в своем деле, но абсолютно не умеют продавать себя и упаковывать знания.",
+                    whatToSell: "Полная упаковка онлайн-продукта под ключ.",
+                    examples: "Проектирование продуктовой воронки для коуча — 60 000 руб.",
+                    avgCheck: "40 000 — 100 000 ₽",
+                    incomePotential: "80 000 — 250 000 ₽",
+                    timeToMoney: "3-4 недели",
+                    tools: "ChatGPT, Miro, Gamma, Claude",
+                    clientsWhere: "Инфопредприниматели, онлайн-школы, продюсеры.",
+                    whoFits: "Методологи, копирайтеры с пониманием маркетинга, психологи.",
+                    whoNotFits: "Люди, которые не умеют глубоко общаться и вытягивать из человека суть.",
+                    difficulty: "Средняя",
+                    fastStart: "Проведите тестовое интервью со знакомым экспертом, загрузите транскрипт в Claude и сформируйте структуру его будущего курса.",
+                    realTask: "Создать из хаотичных мыслей эксперта по кондитерскому искусству четкую структуру платного курса на 6 модулей.",
+                    pros: "Высокие чеки, возможность работы за процент от продаж (KPI).",
+                    cons: "Зависимость от личной вовлеченности эксперта в процесс.",
+                    careerPath: "Упаковщик -> ИИ-продюсер -> Владелец онлайн-школы.",
+                    dayRoutine: "Интервьюирование, структурирование данных в ИИ, написание сценариев вебинаров, дизайн прототипов.",
+                    studyFirst: "Изучите основы методологии образования (pedagogical design) и структуры продаж."
+                }
+            },
+            {
+                id: "prof-11",
+                name: "Специалист по ИИ-лендингам",
+                level: "Уровень 2. Средний уровень",
+                tagColor: "bg-purple-50 text-brand-accentViolet border-purple-200",
+                points: {
+                    desc: "Создатель одностраничных сайтов с конвертирующей структурой и ИИ-графикой.",
+                    dailyTasks: "Написание продающей структуры сайта, генерация фонов и иконок, верстка в no-code конструкторах.",
+                    whyPaid: "Сайты нужны любому бизнесу для рекламы, но классическая разработка стоит дорого и длится долго.",
+                    whatToSell: "Одностраничный продающий сайт под ключ.",
+                    examples: "Лендинг для юридической компании — 30 000 руб.",
+                    avgCheck: "20 000 — 50 000 ₽",
+                    incomePotential: "70 000 — 200 000 ₽",
+                    timeToMoney: "2-3 недели",
+                    tools: "Framer, Relume, ChatGPT, Tilda, Midjourney",
+                    clientsWhere: "Локальный бизнес, организаторы вебинаров, селлеры.",
+                    whoFits: "Веб-дизайнеры, верстальщики, маркетологи.",
+                    whoNotFits: "Люди, далекие от базовой технической логики веб-страниц.",
+                    difficulty: "Средняя",
+                    fastStart: "Освойте Relume Library и Framer. Соберите первый сайт за 2 часа с помощью ИИ-генерации структуры.",
+                    realTask: "Создать стильный лендинг для продажи премиальных свечей ручной работы.",
+                    pros: "Быстрый цикл сделки — сайт можно сдать за 3-5 дней.",
+                    cons: "Необходимость минимально разбираться в доменах, хостингах и базовой SEO-настройке.",
+                    careerPath: "Специалист по лендингам -> Веб-разработчик -> UX/UI дизайнер.",
+                    dayRoutine: "Генерация прототипа в Relume, экспорт во Framer, доработка графики в Midjourney, верстка.",
+                    studyFirst: "Изучите правила веб-юзабилити (UX) и основы копирайтинга прямого отклика."
+                }
+            },
+            {
+                id: "prof-12",
+                name: "ИИ-маркетолог",
+                level: "Уровень 2. Средний уровень",
+                tagColor: "bg-purple-50 text-brand-accentViolet border-purple-200",
+                points: {
+                    desc: "Маркетолог широкого профиля, использующий нейросети для запуска и оптимизации рекламных кампаний.",
+                    dailyTasks: "Генерация рекламных креативов, написание текстов объявлений, сегментация аудитории, планирование рекламного бюджета.",
+                    whyPaid: "Реклама — топливо бизнеса. ИИ позволяет тестировать в 10 раз больше гипотез в единицу времени.",
+                    whatToSell: "Запуск рекламы, аудит маркетинговой стратегии, создание паков креативов.",
+                    examples: "Месячное ведение трафика для автосервиса — 40 000 руб.",
+                    avgCheck: "30 000 — 80 000 ₽",
+                    incomePotential: "90 000 — 250 000 ₽",
+                    timeToMoney: "3-4 недели",
+                    tools: "ChatGPT, Midjourney, Яндекс Директ, Таргет-инструменты",
+                    clientsWhere: "Малый и средний бизнес, e-commerce проекты.",
+                    whoFits: "Классические маркетологи, таргетологи, желающие автоматизировать рутину.",
+                    whoNotFits: "Люди, которые боятся анализировать рекламные метрики (CTR, ROI, CPL).",
+                    difficulty: "Средняя",
+                    fastStart: "Пройдите базовый курс по интернет-рекламе и научитесь генерировать 50 вариантов объявлений за 15 минут через ИИ.",
+                    realTask: "Запустить трафик на вебинар по похудению с высокой конверсией клика.",
+                    pros: "Высокая востребованность, понятная окупаемость работы для клиента.",
+                    cons: "Высокая ответственность за рекламный бюджет заказчика.",
+                    careerPath: "ИИ-маркетолог -> Трафик-менеджер -> Директор по маркетингу.",
+                    dayRoutine: "Анализ показателей за прошлый день, генерация новых креативов, настройка кампаний, отчеты.",
+                    studyFirst: "Изучите ключевые показатели интернет-маркетинга и психологию влияния."
+                }
+            },
+            {
+                id: "prof-13",
+                name: "Специалист по ИИ-автоворонкам",
+                level: "Уровень 2. Средний уровень",
+                tagColor: "bg-purple-50 text-brand-accentViolet border-purple-200",
+                points: {
+                    desc: "Архитектор автоматических путей клиента от первого клика до покупки продукта без участия менеджера.",
+                    dailyTasks: "Сборка логики воронки в Miro, написание цепочек писем в ChatGPT, интеграция писем с рассыльщиками.",
+                    whyPaid: "Автоворонки приносят деньги спящему владельцу. Это мечта любого инфобизнеса.",
+                    whatToSell: "Проектирование и техническая сборка автоворонки под ключ.",
+                    examples: "Сборка автоворонки для продажи курса по рисованию — 50 000 руб.",
+                    avgCheck: "35 000 — 90 000 ₽",
+                    incomePotential: "80 000 — 220 000 ₽",
+                    timeToMoney: "3 недели",
+                    tools: "ChatGPT, Miro, GetCourse, Senler",
+                    clientsWhere: "Онлайн-школы, коучи, эксперты, клубы по подписке.",
+                    whoFits: "Логически мыслящие гуманитарии, маркетологи.",
+                    whoNotFits: "Те, кто путается в причинно-следственных связях (если кнопка А нажата -> отправить письмо Б).",
+                    difficulty: "Средняя",
+                    fastStart: "Нарисуйте схему простейшей воронки в Miro, напишите письма в ChatGPT и настройте их в любом конструкторе рассылок.",
+                    realTask: "Создать трехдневный прогревающий марафон в боте, который продает личную консультацию астролога.",
+                    pros: "Высокая добавленная стоимость услуги, воронки покупают охотно.",
+                    cons: "Требует интеграции сторонских сервисов оплаты и рассылок.",
+                    careerPath: "Специалист по воронкам -> ИИ-маркетолог -> Автоматизатор бизнеса.",
+                    dayRoutine: "Проектирование логики, написание контента, тестирование отправки триггеров, оптимизация конверсий.",
+                    studyFirst: "Ознакомьтесь с концепцией Customer Journey Map (CJM) и триггерным маркетингом."
+                }
+            },
+            {
+                id: "prof-14",
+                name: "Создатель чат-ботов на ИИ",
+                level: "Уровень 2. Средний уровень",
+                tagColor: "bg-purple-50 text-brand-accentViolet border-purple-200",
+                points: {
+                    desc: "Разработчик интеллектуальных чат-ботов для мессенджеров, способных общаться как живые люди.",
+                    dailyTasks: "Настройка дерева диалогов, подключение API нейросетей к платформе конструктора ботов.",
+                    whyPaid: "Обычные боты по кнопкам раздражают клиентов. ИИ-боты понимают человеческую речь и продают прямо в переписке.",
+                    whatToSell: "Создание умного бота-консультанта для сайта или Telegram.",
+                    examples: "ИИ-консультант для интернет-магазина косметики — 40 000 руб.",
+                    avgCheck: "25 000 — 70 000 ₽",
+                    incomePotential: "70 000 — 180 000 ₽",
+                    timeToMoney: "2-3 недели",
+                    tools: "ManyChat, LeadTech, ChatGPT API, Make",
+                    clientsWhere: "Сфера услуг, интернет-магазины, службы поддержки клиентов.",
+                    whoFits: "Люди с базовым техническим интересом, администраторы сайтов.",
+                    whoNotFits: "Люди, которые боятся словосочетания «API-интеграция».",
+                    difficulty: "Средняя",
+                    fastStart: "Создайте простого бота в SaleBot или LeadTech, подключите к нему ChatGPT через встроенный модуль.",
+                    realTask: "Сделать бота поддержки для отеля, который отвечает на 100 частых вопросов гостей об условиях проживания.",
+                    pros: "Понятный вау-эффект для заказчика, когда бот начинает говорить как человек.",
+                    cons: "Иногда боты могут уходить в сторону от скрипта продаж.",
+                    careerPath: "Создатель ботов -> Интегратор ИИ-решений -> Архитектор ИИ-агентов.",
+                    dayRoutine: "Проектирование базы знаний для бота, настройка системного промпта, тестирование диалогов, исправление ошибок.",
+                    studyFirst: "Изучите принципы проектирования диалоговых интерфейсов и работы с переменными."
+                }
+            },
+            {
+                id: "prof-15",
+                name: "Специалист по ИИ-ботам (Sales/Support)",
+                level: "Уровень 3. Высокий чек",
+                tagColor: "bg-pink-50 text-brand-accentPink border-pink-200",
+                points: {
+                    desc: "Специалист, внедряющий ИИ-ассистентов в отделы продаж и клиентской поддержки для автоматического закрытия сделок.",
+                    dailyTasks: "Обучение нейросети на транскриптах лучших продажников компании, контроль конверсии бота в оплату.",
+                    whyPaid: "ИИ-продавец работает 24/7, не устает, мгновенно отвечает клиентам и экономит миллионы на ФОТ.",
+                    whatToSell: "Внедрение умного ИИ-менеджера по продажам в CRM-систему компании.",
+                    examples: "Внедрение ИИ-продавца в AmoCRM для школы дизайна — 120 000 руб.",
+                    avgCheck: "80 000 — 200 000 ₽",
+                    incomePotential: "150 000 — 350 000 ₽",
+                    timeToMoney: "1 месяц",
+                    tools: "ChatGPT API, Coze, AmoCRM, Make (Integromat)",
+                    clientsWhere: "Средний бизнес с большим потоком входящих заявок, онлайн-школы.",
+                    whoFits: "Бывшие руководители отделов продаж, CRM-интеграторы.",
+                    whoNotFits: "Люди без понимания психологии продаж и этапов заключения сделки.",
+                    difficulty: "Высокая",
+                    fastStart: "Соберите ИИ-агента на платформе Coze, дайте ему файл с описанием продукта и научите продавать его в диалоге.",
+                    realTask: "Интегрировать ИИ в Telegram-аккаунт компании, чтобы он квалифицировал лидов и записывал их на созвон.",
+                    pros: "Крайне высокая оплата за результат, клиенты видят прямую окупаемость.",
+                    cons: "Сложная техническая стыковка с CRM-системами.",
+                    careerPath: "ИИ-интегратор отделов продаж -> Руководитель ИИ-агентства.",
+                    dayRoutine: "Анализ переписок ИИ с реальными клиентами, корректировка инструкций, интеграция баз данных.",
+                    studyFirst: "Изучите скрипты продаж, воронку квалификации лидов и методы интеграции через Webhooks."
+                }
+            },
+            {
+                id: "prof-16",
+                name: "Специалист по автоматизации бизнеса",
+                level: "Уровень 3. Высокий чек",
+                tagColor: "bg-pink-50 text-brand-accentPink border-pink-200",
+                points: {
+                    desc: "Инженер процессов, соединяющий разные бизнес-сервисы в единую автоматическую систему без ручного труда.",
+                    dailyTasks: "Связывание Google Таблиц, мессенджеров, почты и ИИ-моделей через визуальные коннекторы.",
+                    whyPaid: "Ручной перенос данных из CRM в таблицы и отправка писем съедает тонны рабочего времени сотрудников.",
+                    whatToSell: "Автоматизация конкретного бизнес-процесса (например, документооборота).",
+                    examples: "Автоматизация выставления счетов и уведомления клиентов — 90 000 руб.",
+                    avgCheck: "50 000 — 150 000 ₽",
+                    incomePotential: "120 000 — 300 000 ₽",
+                    timeToMoney: "3-4 недели",
+                    tools: "Make.com, Albato, Zapier, Google Apps Script",
+                    clientsWhere: "Digital-агентства, интернет-магазины, строительные компании.",
+                    whoFits: "Люди со склонностью к системному мышлению, инженеры, аналитики.",
+                    whoNotFits: "Хаотичные люди, не способные уследить за логикой сложных блок-схем.",
+                    difficulty: "Высокая",
+                    fastStart: "Создайте бесплатный аккаунт на Make.com, свяжите Telegram-бота с Google Таблицей за 15 минут.",
+                    realTask: "Сделать автоматический парсинг входящих заявок с почты, прогон текста через ИИ для оценки важности и отправка отчета в рабочий чат.",
+                    pros: "Клиент платит за избавление от ручной работы навсегда. Очень легкая продажа ценности.",
+                    cons: "При обновлении сторонних API сценарии могут ломаться и требовать техподдержки.",
+                    careerPath: "Автоматизатор -> ИИ-архитектор -> CTO малого бизнеса.",
+                    dayRoutine: "Проектирование сценариев интеграции, тестирование ошибок, отладка передачи данных.",
+                    studyFirst: "Поймите принципы работы протокола HTTP, запросов GET/POST и формата данных JSON."
+                }
+            },
+            {
+                id: "prof-17",
+                name: "Специалист по GPT-агентам",
+                level: "Уровень 3. Высокий чек",
+                tagColor: "bg-pink-50 text-brand-accentPink border-pink-200",
+                points: {
+                    desc: "Создатель автономных ИИ-агентов, способных самостоятельно планировать задачи, искать информацию и выдавать готовые решения.",
+                    dailyTasks: "Написание сложных многоуровневых промптов, подключение ИИ-агентов к внешним базам знаний и инструментам.",
+                    whyPaid: "Агенты — вершина развития ИИ в 2026. Они могут заменять целые отделы (например, отдел первичного рекрутинга).",
+                    whatToSell: "Разработка автономного ИИ-агента под конкретную должностную инструкцию.",
+                    examples: "Создание ИИ-рекрутера, проводящего первый этап скрининга резюме — 150 000 руб.",
+                    avgCheck: "100 000 — 250 000 ₽",
+                    incomePotential: "180 000 — 450 000 ₽",
+                    timeToMoney: "1-1.5 месяца",
+                    tools: "OpenAI Assistants API, CrewAI, AutoGen, LangChain (no-code обертки)",
+                    clientsWhere: "IT-компании, крупные онлайн-школы, HR-департаменты.",
+                    whoFits: "Люди с опытом управления командами, системные архитекторы, продвинутые пользователи ИИ.",
+                    whoNotFits: "Абсолютные новички, не работавшие с ИИ ранее.",
+                    difficulty: "Высокая",
+                    fastStart: "Изачите платформу CrewAI или аналогичные no-code решения для управления группами ИИ-агентов.",
+                    realTask: "Создать систему из трех ИИ-агентов: один пишет тезисы, второй генерирует код, третий проверяет на ошибки.",
+                    pros: "Максимально передовой край технологий, самый высокий спрос и чеки на рынке.",
+                    cons: "Высокая сложность проектирования поведения автономных агентов.",
+                    careerPath: "Специалист по агентам -> Архитектор ИИ-систем.",
+                    dayRoutine: "Написание сценариев поведения агентов, тестирование краевых случаев, оптимизация затрат на API-токены.",
+                    studyFirst: "Освойте концепцию агентного ИИ и методы управления памятью моделей."
+                }
+            },
+            {
+                id: "prof-18",
+                name: "ИИ-консультант",
+                level: "Уровень 3. Высокий чек",
+                tagColor: "bg-pink-50 text-brand-accentPink border-pink-200",
+                points: {
+                    desc: "Эксперт, помогающий бизнесу найти точки роста и сокращения расходов за счет точечного внедрения ИИ-технологий.",
+                    dailyTasks: "Аудит текущих бизнес-процессов компании, составление дорожной карты внедрения ИИ, подбор инструментов.",
+                    whyPaid: "Бизнес знает, что ИИ — это круто, но руководители не понимают, за что хвататься. Консультант экономит им миллионы на экспериментах.",
+                    whatToSell: "Платные консультации, аудит процессов компании, дорожная карта автоматизации.",
+                    examples: "Аудит процессов рекламного агентства с дорожной картой внедрения ИИ — 80 000 руб.",
+                    avgCheck: "30 000 — 100 000 ₽",
+                    incomePotential: "150 000 — 400 000 ₽",
+                    timeToMoney: "3-4 недели",
+                    tools: "Весь стек ИИ-сервисов, Miro, Google Slides",
+                    clientsWhere: "Владельцы малого и среднего бизнеса, генеральные директора.",
+                    whoFits: "Опытные бизнес-консультанты, бывшие проджекты, топ-менеджеры.",
+                    whoNotFits: "Новички без опыта работы в классическом бизнесе.",
+                    difficulty: "Высокая",
+                    fastStart: "Проведите бесплатный экспресс-аудит для знакомого предпринимателя, покажите где он теряет время, продайте платное внедрение.",
+                    realTask: "Найти 5 процессов в юридической фирме, которые можно ускорить в 3 раза с помощью ИИ, и защитить проект перед директором.",
+                    pros: "Чистая интеллектуальная работа без необходимости кодить руками, высокий авторитет.",
+                    cons: "Необходимо постоянно отслеживать десятки новых ИИ-технологий ежедневно.",
+                    careerPath: "Консультант -> Партнер консалтинговой компании -> Руководитель ИИ-агентства.",
+                    dayRoutine: "Интервью с сотрудниками клиента, анализ схем процессов, подготовка презентаций, стратегические сессии.",
+                    studyFirst: "Изучите основы бизнес-анализа (BPMN) и управления изменениями."
+                }
+            },
+            {
+                id: "prof-19",
+                name: "Специалист по обучению команд ИИ",
+                level: "Уровень 3. Высокий чек",
+                tagColor: "bg-pink-50 text-brand-accentPink border-pink-200",
+                points: {
+                    desc: "Тренер, обучающий сотрудников компаний практической работе с ИИ для повышения их личной эффективности.",
+                    dailyTasks: "Разработка обучающих программ, проведение воркшопов, создание корпоративных баз знаний и промпт-буков.",
+                    whyPaid: "Купить подписки на ChatGPT мало — нужно заставить сотрудников реально пользоваться ими вместо старых методов.",
+                    whatToSell: "Корпоративные тренинги, мастер-классы, долгосрочное менторство команд.",
+                    examples: "Двухдневный интенсив по ИИ для отдела маркетинга из 10 человек — 150 000 руб.",
+                    avgCheck: "100 000 — 300 000 ₽",
+                    incomePotential: "200 000 — 500 000 ₽",
+                    timeToMoney: "1 месяц",
+                    tools: "ChatGPT Team/Enterprise, Notion, Платформы для вебинаров",
+                    clientsWhere: "HR-директора, владельцы компаний, корпоративные университеты.",
+                    whoFits: "Методологи, бизнес-тренеры, спикеры, опытные пользователи ИИ с хорошими навыками презентации.",
+                    whoNotFits: "Люди, которые боятся публичных выступлений и не умеют просто объяснять сложные вещи.",
+                    difficulty: "Высокая",
+                    fastStart: "Составьте программу короткого мастер-класса по ChatGPT для менеджеров по продажам, проведите его бесплатно для отзыва.",
+                    realTask: "Обучить команду контент-агентства генерировать качественные посты по стандартам компании без потери уникального стиля.",
+                    pros: "Крайне высокая маржинальность, отличный сарафанный маркетинг в бизнес-среде.",
+                    cons: "Большие энергозатраты на публичные выступления и работу с сопротивлением сотрудников инновациям.",
+                    careerPath: "ИИ-тренер -> Владелец корпоративной академии ИИ.",
+                    dayRoutine: "Проведение созвонов, проверка домашних заданий, актуализация учебных материалов, продажи тренингов.",
+                    studyFirst: "Изучите методологию обучения взрослых (андрагогика) и ораторское мастерство."
+                }
+            },
+            {
+                id: "prof-20",
+                name: "ИИ-продюсер проектов",
+                level: "Уровень 3. Высокий чек",
+                tagColor: "bg-pink-50 text-brand-accentPink border-pink-200",
+                points: {
+                    desc: "Руководитель проектов, собирающий команды ИИ-специалистов под крупные задачи клиентов и контролирующий реализацию.",
+                    dailyTasks: "Поиск заказчиков на комплексную автоматизацию, найм ИИ-фрилансеров, контроль сроков и качества.",
+                    whyPaid: "Крупным заказчикам нужен один ответственный человек за весь проект, а не 10 разрозненных фрилансеров.",
+                    whatToSell: "Комплексные ИИ-решения под ключ, запуск онлайн-проектов с ИИ-командой.",
+                    examples: "Запуск онлайн-школы с полностью автоматизированным отделом маркетинга и поддержки — 250 000 руб.",
+                    avgCheck: "150 000 — 400 000 ₽",
+                    incomePotential: "250 000 — 600 000+ ₽",
+                    timeToMoney: "1-2 месяца",
+                    tools: "Trello/Asana, Весь спектр ИИ-инструментов, Excel",
+                    clientsWhere: "Инвесторы, крупные блогеры, производственные компании.",
+                    whoFits: "Опытные продюсеры, проджекты, предприниматели с сильными организаторскими навыками.",
+                    whoNotFits: "Люди без опыта управления проектами и делегирования задач.",
+                    difficulty: "Высокая",
+                    fastStart: "Найдите клиента на сложную задачу (например, создание ИИ-аватара для блогера), наймите ИИ-дизайнера и Reels-специалиста, заберите свой процент за управление.",
+                    realTask: "Управлять процессом создания виртуального ИИ-спикера для автоматической автовебинарной воронки онлайн-школы.",
+                    pros: "Неограниченный доход, масштабные проекты, работа чужими руками.",
+                    cons: "Высокий уровень стресса и финансовой ответственности за результат.",
+                    careerPath: "ИИ-продюсер -> Владелец ИИ-интегратора / Digital-агентства нового типа.",
+                    dayRoutine: "Переговоры с крупными клиентами, созвоны с командой, приемка этапов работы, финансовый учет.",
+                    studyFirst: "Изучите управление проектами (Agile/Scrum) и продажи на большие чеки."
+                }
+            }
+        ];
+
+        // ГЕНЕРАЦИЯ КАРТОЧЕК ПРОФЕССИЙ В DOM С УЛУЧШЕННЫМ СВЕТЛЫМ ИНФОДИЗАЙНОМ
+        function generateProfessions() {
+            const container = document.getElementById('professions-container');
+            container.innerHTML = professions.map((p, index) => `
+                <div id="${p.id}" class="glass-card rounded-[2.5rem] p-6 md:p-10 border border-pink-100/80 relative overflow-hidden transition-all duration-500 hover:border-brand-accentPink/30 hover:shadow-xl">
+                    <!-- Задний светящийся фон в зависимости от уровня -->
+                    <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-pink-100/[0.15] blur-[150px] pointer-events-none"></div>
+                    <div class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-purple-100/[0.15] blur-[150px] pointer-events-none"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- 1. HEADER DASHBOARD (Шапка) -->
+                        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pb-8 border-b border-pink-100 mb-8">
+                            <div class="space-y-2">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[10px] md:text-xs font-bold font-display uppercase tracking-widest ${p.tagColor} shadow-sm">
+                                    ${p.level}
+                                </div>
+                                <h3 class="font-display text-2xl md:text-4xl font-black text-brand-dark tracking-tight leading-tight">
+                                    ${index + 1}. ${p.name}
+                                </h3>
+                            </div>
+                            
+                            <!-- Быстрые метрики -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:w-auto">
+                                <div class="bg-emerald-50/50 border border-emerald-100 rounded-2xl p-3 text-center min-w-[120px]">
+                                    <span class="text-[10px] text-emerald-600/80 uppercase font-bold block mb-0.5">Доход</span>
+                                    <span class="font-display text-sm md:text-base font-extrabold text-emerald-600">${p.points.incomePotential}</span>
+                                </div>
+                                <div class="bg-sky-50/50 border border-sky-100 rounded-2xl p-3 text-center min-w-[120px]">
+                                    <span class="text-[10px] text-sky-600/80 uppercase font-bold block mb-0.5">Сложность</span>
+                                    <span class="font-display text-sm md:text-base font-extrabold text-sky-700">${p.points.difficulty}</span>
+                                </div>
+                                <div class="bg-pink-50/50 border border-pink-100 rounded-2xl p-3 text-center col-span-2 sm:col-span-1 min-w-[120px]">
+                                    <span class="text-[10px] text-pink-600/80 uppercase font-bold block mb-0.5">Старт</span>
+                                    <span class="font-display text-sm md:text-base font-extrabold text-brand-accentPink">${p.points.timeToMoney}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. МОДУЛЬНАЯ СЕТКА КАРТЫ -->
+                        <div class="grid xl:grid-cols-12 gap-6">
+                            
+                            <!-- ЛЕВОЕ КРЫЛО: Суть, Бизнес, Офферы (7 колонок) -->
+                            <div class="xl:col-span-7 space-y-6">
+                                
+                                <!-- Описание и Бизнес-Ценность -->
+                                <div class="bg-slate-50 border border-slate-100 rounded-3xl p-6 relative overflow-hidden shadow-sm">
+                                    <div class="absolute top-4 right-4 text-pink-100"><i data-lucide="sparkles" class="w-12 h-12"></i></div>
+                                    <h4 class="text-xs font-bold text-brand-accentPink uppercase tracking-wider mb-4 flex items-center gap-2 font-display">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accentPink"></span>
+                                        Суть и бизнес-ценность роли
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <span class="text-[11px] text-slate-400 block uppercase font-bold mb-1">Глобальная роль (Кто это):</span>
+                                            <p class="text-slate-800 text-sm md:text-base leading-relaxed font-medium">${p.points.desc}</p>
+                                        </div>
+                                        <div class="pt-4 border-t border-slate-200/60">
+                                            <span class="text-[11px] text-slate-400 block uppercase font-bold mb-1">Почему за это платят деньги:</span>
+                                            <p class="text-slate-700 text-sm leading-relaxed">${p.points.whyPaid}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Монетизация & Офферы -->
+                                <div class="bg-emerald-50/30 border border-emerald-100 rounded-3xl p-6 shadow-sm">
+                                    <h4 class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-4 flex items-center gap-2 font-display">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                        Монетизация & Продукт
+                                    </h4>
+                                    <div class="grid sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <span class="text-[11px] text-slate-400 block uppercase font-bold mb-1">Что продавать заказчикам:</span>
+                                            <p class="text-slate-700 text-xs md:text-sm leading-relaxed">${p.points.whatToSell}</p>
+                                        </div>
+                                        <div class="p-4 bg-white rounded-2xl border border-emerald-100 shadow-sm">
+                                            <span class="text-[11px] text-emerald-600 block uppercase font-bold mb-1">Пример готовой услуги:</span>
+                                            <p class="text-slate-800 text-xs md:text-sm font-bold italic leading-relaxed">«${p.points.examples}»</p>
+                                            <span class="text-[10px] text-slate-500 block mt-2 pt-2 border-t border-slate-100">Средний чек за проект: <strong class="text-emerald-600 font-extrabold">${p.points.avgCheck}</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Пример реальной задачи в виде Slack чата -->
+                                <div class="bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm">
+                                    <h4 class="text-xs font-bold text-brand-accentViolet uppercase tracking-wider mb-4 flex items-center gap-2 font-display">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accentViolet"></span>
+                                        Пример реальной задачи от клиента
+                                    </h4>
+                                    <div class="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-brand-accentPink text-xs font-bold">К</div>
+                                            <div>
+                                                <span class="text-xs font-bold text-brand-dark block">Заказчик (Клиент)</span>
+                                                <span class="text-[9px] text-slate-400 block">Вчера, 18:42</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-slate-700 text-xs md:text-sm leading-relaxed pl-10 italic font-medium">
+                                            "${p.points.realTask}"
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- ПРАВОЕ КРЫЛО: Специфика работы, Трек входа, Инструменты (5 колонок) -->
+                            <div class="xl:col-span-5 space-y-6">
+                                
+                                <!-- Процесс и Рутина -->
+                                <div class="bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm">
+                                    <h4 class="text-xs font-bold text-brand-accentViolet uppercase tracking-wider mb-4 flex items-center gap-2 font-display">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accentViolet"></span>
+                                        Рабочий процесс & Рутина
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <span class="text-[11px] text-slate-400 block uppercase font-bold mb-1">Ежедневная рутина:</span>
+                                            <p class="text-slate-700 text-xs md:text-sm leading-relaxed">${p.points.dailyTasks}</p>
+                                        </div>
+                                        <div class="pt-3 border-t border-slate-200/60">
+                                            <span class="text-[11px] text-slate-400 block uppercase font-bold mb-1">Как выглядит типичный день:</span>
+                                            <p class="text-slate-700 text-xs md:text-sm leading-relaxed">${p.points.dayRoutine}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Быстрый старт -->
+                                <div class="bg-pink-50/20 border border-pink-100 rounded-3xl p-6 shadow-sm">
+                                    <h4 class="text-xs font-bold text-brand-accentPink uppercase tracking-wider mb-4 flex items-center gap-2 font-display">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accentPink"></span>
+                                        Пошаговый трек входа
+                                    </h4>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <span class="text-[11px] text-brand-accentPink block uppercase font-bold mb-1.5">Что изучить первым делом:</span>
+                                            <p class="text-slate-800 text-xs md:text-sm leading-relaxed font-semibold">${p.points.studyFirst}</p>
+                                        </div>
+                                        <div class="pt-3 border-t border-pink-100">
+                                            <span class="text-[11px] text-slate-400 block uppercase font-bold mb-1.5">Главные инструменты:</span>
+                                            <div class="flex flex-wrap gap-1.5">
+                                                ${p.points.tools.split(',').map(t => `<span class="text-[10px] font-bold bg-white text-brand-dark border border-pink-100 px-2 py-1 rounded-md shadow-sm">${t.trim()}</span>`).join('')}
+                                            </div>
+                                        </div>
+                                        <div class="pt-3 border-t border-pink-100">
+                                            <span class="text-[11px] text-slate-400 block uppercase font-bold mb-1.5">Алгоритм быстрого старта:</span>
+                                            <p class="text-slate-800 text-xs md:text-sm leading-relaxed font-medium bg-white p-3 rounded-xl border border-pink-100 shadow-sm">${p.points.fastStart}</p>
+                                        </div>
+                                        <div class="pt-3 border-t border-pink-100">
+                                            <span class="text-[11px] text-slate-400 block uppercase font-bold mb-1">Где искать клиентов:</span>
+                                            <p class="text-slate-700 text-xs md:text-sm leading-relaxed">${p.points.clientsWhere}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- 3. СОВМЕСТИМОСТЬ, ПЛЮСЫ И МИНУСЫ (Широкий ряд) -->
+                        <div class="grid md:grid-cols-2 gap-6 mt-6">
+                            
+                            <!-- Плюсы & Подходит (Зеленый акцент) -->
+                            <div class="bg-emerald-50/50 border border-emerald-100 rounded-3xl p-6 flex flex-col justify-between shadow-sm">
+                                <div>
+                                    <h4 class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-4 flex items-center gap-2 font-display">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
+                                        Кому подходит & Преимущества
+                                    </h4>
+                                    <div class="space-y-3 text-xs md:text-sm">
+                                        <p class="text-slate-700"><strong class="text-emerald-600">Идеальный портрет:</strong> ${p.points.whoFits}</p>
+                                        <p class="text-slate-700 pt-3 border-t border-emerald-100/50"><strong class="text-emerald-600">Главные плюсы:</strong> ${p.points.pros}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Минусы & Не подходит (Красный акцент) -->
+                            <div class="bg-red-50/50 border border-red-100 rounded-3xl p-6 flex flex-col justify-between shadow-sm">
+                                <div>
+                                    <h4 class="text-xs font-bold text-red-500 uppercase tracking-wider mb-4 flex items-center gap-2 font-display">
+                                        <i data-lucide="alert-triangle" class="w-4 h-4 text-red-400"></i>
+                                        Кому НЕ подходит & Ограничения
+                                    </h4>
+                                    <div class="space-y-3 text-xs md:text-sm">
+                                        <p class="text-slate-700"><strong class="text-red-500">Кому не соваться:</strong> ${p.points.whoNotFits}</p>
+                                        <p class="text-slate-700 pt-3 border-t border-red-100/50"><strong class="text-red-500">Минусы и риски:</strong> ${p.points.cons}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- 4. НИЖНЯЯ ПАНЕЛЬ: Карьерный рост -->
+                        <div class="mt-6 p-4 bg-slate-50 border border-slate-100 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4 shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-brand-accentViolet border border-purple-200 shadow-sm"><i data-lucide="trending-up" class="w-4 h-4"></i></div>
+                                <div>
+                                    <span class="text-[10px] text-slate-400 block uppercase font-bold">Карьерный вектор роста</span>
+                                    <p class="text-slate-800 text-xs md:text-sm font-extrabold">${p.points.careerPath}</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-100 text-emerald-600 text-xs font-extrabold shrink-0 shadow-sm">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                Спрос 2026: Критически высокий
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            `).join('');
+            
+            // Re-init lucide icons for generated elements
+            lucide.createIcons();
+        }
+
+        function scrollToProfession(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // ДАННЫЕ И ЛОГИКА ТЕСТА
+        const testQuestions = [
+            {
+                text: "Какая сфера работы вам эмоционально ближе всего?",
+                options: [
+                    { text: "Создание текстов, сценариев, смыслов", scores: { "prof-1": 3, "prof-2": 3, "prof-10": 2 } },
+                    { text: "Визуальное оформление, эстетика, картинки", scores: { "prof-6": 3, "prof-7": 3, "prof-4": 2 } },
+                    { text: "Организация процессов, таблицы, порядок", scores: { "prof-8": 3, "prof-9": 2, "prof-16": 2 } },
+                    { text: "Настройка систем, автоматизации, логика", scores: { "prof-14": 2, "prof-15": 3, "prof-16": 3, "prof-17": 3 } }
+                ]
+            },
+            {
+                text: "Сколько времени вы готовы уделить обучению до первых денег?",
+                options: [
+                    { text: "Буквально 1-2 недели (хочу быстрый старт)", scores: { "prof-1": 3, "prof-4": 3, "prof-5": 3 } },
+                    { text: "Около месяца (готов вникнуть в средние навыки)", scores: { "prof-2": 2, "prof-8": 3, "prof-11": 3 } },
+                    { text: "Готов учиться больше месяца ради высокого чека", scores: { "prof-15": 3, "prof-17": 3, "prof-20": 3 } }
+                ]
+            },
+            {
+                text: "Как вы относитесь к общению с клиентами лицом к лицу?",
+                options: [
+                    { text: "Предпочитаю переписку, не хочу созвонов", scores: { "prof-1": 3, "prof-6": 3, "prof-5": 2 } },
+                    { text: "Нормально созваниваюсь, но не хочу вести вебинары", scores: { "prof-8": 3, "prof-10": 2, "prof-11": 2 } },
+                    { text: "Готов обучать, выступать и вести стратегические сессии", scores: { "prof-18": 3, "prof-19": 3, "prof-20": 2 } }
+                ]
+            },
+            {
+                text: "Какая рутинная задача вас раздражает МЕНЬШЕ всего?",
+                options: [
+                    { text: "Проверка грамматики и переписывание абзацев", scores: { "prof-1": 3, "prof-2": 3 } },
+                    { text: "Подбор шрифтов, цветов и выравнивание картинок", scores: { "prof-4": 3, "prof-7": 3 } },
+                    { text: "Поиск информации в интернете и структурирование ссылок", scores: { "prof-9": 3, "prof-8": 2 } },
+                    { text: "Тестирование кнопок и интеграций", scores: { "prof-16": 3, "prof-14": 2 } }
+                ]
+            },
+            {
+                text: "Какой тип контента в соцсетях вам нравится больше?",
+                options: [
+                    { text: "Короткие видео Reels/Shorts", scores: { "prof-3": 3 } },
+                    { text: "Лонгриды в Telegram-каналах", scores: { "prof-2": 3 } },
+                    { text: "Красивые инфографики и гайды", scores: { "prof-5": 3, "prof-6": 2 } },
+                    { text: "Продающие лендинги", scores: { "prof-11": 3 } }
+                ]
+            },
+            {
+                text: "Ваш уровень владения компьютером на текущий момент?",
+                options: [
+                    { text: "Обычный пользователь (браузер, документы)", scores: { "prof-1": 3, "prof-5": 3, "prof-4": 2 } },
+                    { text: "Уверенный (могу настроить расширение, разобраться в новом софте)", scores: { "prof-8": 3, "prof-11": 3, "prof-14": 2 } },
+                    { text: "Продвинутый (интересуюсь кодом, скриптами, базами данных)", scores: { "prof-16": 3, "prof-17": 3 } }
+                ]
+            },
+            {
+                text: "Что для вас идеальный результат работы?",
+                options: [
+                    { text: "Красивый готовый документ или картинка", scores: { "prof-7": 3, "prof-4": 3 } },
+                    { text: "Рост просмотров и вовлеченности в блоге", scores: { "prof-3": 3, "prof-2": 3 } },
+                    { text: "Выстроенная логика воронки, которая приносит деньги", scores: { "prof-13": 3, "prof-10": 2 } },
+                    { text: "Полностью автоматизированный процесс, работающий без людей", scores: { "prof-16": 3, "prof-17": 3 } }
+                ]
+            },
+            {
+                text: "С какими объемами информации вам комфортнее работать?",
+                options: [
+                    { text: "Короткие, лаконичные форматы (посты, карточки)", scores: { "prof-6": 3, "prof-1": 2 } },
+                    { text: "Глубокие лонгриды, исследования рынка", scores: { "prof-9": 3, "prof-10": 2 } },
+                    { text: "Большие цепочки автоматических задач", scores: { "prof-16": 3, "prof-15": 2 } }
+                ]
+            },
+            {
+                text: "Вам важно работать в команде или в одиночку?",
+                options: [
+                    { text: "Полностью в одиночку (я фрилансер-одиночка)", scores: { "prof-1": 3, "prof-7": 3, "prof-6": 2 } },
+                    { text: "Тесный контакт с одним ключевым человеком (экспертом/предпринимателем)", scores: { "prof-8": 3, "prof-10": 2 } },
+                    { text: "Управление подрядчиками, координация команд", scores: { "prof-20": 3, "prof-19": 2 } }
+                ]
+            },
+            {
+                text: "Какая финансовая цель на ближайшие полгода?",
+                options: [
+                    { text: "Стабильные 50 000 - 80 000 руб без лишнего стресса", scores: { "prof-1": 3, "prof-4": 3, "prof-5": 3 } },
+                    { text: "Рост до 150 000 руб на комплексных услугах", scores: { "prof-2": 3, "prof-10": 3, "prof-11": 3 } },
+                    { text: "Масштаб от 250 000 руб, готов строить команду", scores: { "prof-20": 3, "prof-17": 3, "prof-16": 2 } }
+                ]
+            },
+            {
+                text: "Насколько вы усидчивы?",
+                options: [
+                    { text: "Могу часами сидеть над одной сложной логической задачей", scores: { "prof-16": 3, "prof-9": 3, "prof-17": 2 } },
+                    { text: "Люблю быстро переключаться между задачами и общаться", scores: { "prof-8": 3, "prof-20": 3, "prof-19": 2 } },
+                    { text: "Мой фокус внимания средний, люблю творчество", scores: { "prof-7": 3, "prof-3": 2 } }
+                ]
+            },
+            {
+                text: "Какой ваш уровень инициативности?",
+                options: [
+                    { text: "Я отличный исполнитель, мне нужно чёткое ТЗ", scores: { "prof-6": 3, "prof-1": 2, "prof-4": 2 } },
+                    { text: "Я предлагаю идеи, но финальное слово за заказчиком", scores: { "prof-8": 3, "prof-10": 3, "prof-11": 2 } },
+                    { text: "Я полностью беру управление процессами на себя", scores: { "prof-20": 3, "prof-18": 3 } }
+                ]
+            },
+            {
+                text: "Какая ниша бизнеса вам кажется самой интересной?",
+                options: [
+                    { text: "Онлайн-школы, коучинг, образование", scores: { "prof-10": 3, "prof-13": 3, "prof-5": 2 } },
+                    { text: "Маркетплейсы, интернет-магазины, продажа товаров", scores: { "prof-6": 3, "prof-14": 2 } },
+                    { text: "Услуги для бизнеса (B2B), автоматизация процессов", scores: { "prof-16": 3, "prof-15": 3, "prof-17": 3 } }
+                ]
+            },
+            {
+                text: "Вы боитесь технических ошибок и сбоев в программах?",
+                options: [
+                    { text: "Да, они вызывают сильный стресс", scores: { "prof-1": 3, "prof-7": 3, "prof-5": 2 } },
+                    { text: "Отношусь нейтрально, готов разбираться с поддержкой", scores: { "prof-8": 3, "prof-11": 3 } },
+                    { text: "Обожаю искать ошибки и копаться в настройках", scores: { "prof-16": 3, "prof-17": 3 } }
+                ]
+            },
+            {
+                text: "Что вы хотите сделать первым делом после прочтения этого гайда?",
+                options: [
+                    { text: "Открыть ИИ-инструмент и написать первый текст/картинку", scores: { "prof-1": 3, "prof-7": 3 } },
+                    { text: "Нарисовать структуру воронки или составить план аудита", scores: { "prof-10": 3, "prof-18": 3 } },
+                    { text: "Собрать простого чат-бота", scores: { "prof-14": 3, "prof-16": 2 } }
+                ]
+            }
+        ];
+
+        let currentQuestionIdx = 0;
+        let userScores = {};
+
+        // Инициализация баллов для всех профессий
+        function initScores() {
+            professions.forEach(p => {
+                userScores[p.id] = 0;
+            });
+        }
+
+        function renderQuestion() {
+            if (currentQuestionIdx >= testQuestions.length) {
+                showQuizResult();
+                return;
+            }
+
+            const q = testQuestions[currentQuestionIdx];
+            
+            // Обновляем прогресс-бар
+            const progressPercent = ((currentQuestionIdx + 1) / testQuestions.length) * 100;
+            document.getElementById('quiz-progress').style.width = `${progressPercent}%`;
+            
+            // Текст вопроса
+            document.getElementById('question-number').innerText = `Вопрос ${currentQuestionIdx + 1} из ${testQuestions.length}`;
+            document.getElementById('question-text').innerText = q.text;
+
+            // Варианты ответов
+            const optionsBlock = document.getElementById('options-block');
+            optionsBlock.innerHTML = q.options.map((opt, idx) => `
+                <button onclick="handleAnswer(${idx})" class="w-full text-left p-4 rounded-xl bg-white border border-pink-100 hover:bg-pink-50 hover:border-brand-accentPink text-slate-800 transition-all font-medium shadow-sm">
+                    ${opt.text}
+                </button>
+            `).join('');
+        }
+
+        function handleAnswer(optIdx) {
+            const opt = testQuestions[currentQuestionIdx].options[optIdx];
+            
+            // Начисляем баллы
+            Object.keys(opt.scores).forEach(profId => {
+                if (userScores[profId] !== undefined) {
+                    userScores[profId] += opt.scores[profId];
+                }
+            });
+
+            currentQuestionIdx++;
+            renderQuestion();
+        }
+
+        function showQuizResult() {
+            document.getElementById('question-block').classList.add('hidden');
+            document.getElementById('result-block').classList.remove('hidden');
+
+            // Находим профессию с максимальным баллом
+            let bestProfId = professions[0].id;
+            let maxScore = -1;
+
+            Object.keys(userScores).forEach(profId => {
+                if (userScores[profId] > maxScore) {
+                    maxScore = userScores[profId];
+                    bestProfId = profId;
+                }
+            });
+
+            const bestProf = professions.find(p => p.id === bestProfId);
+
+            // Отображаем результаты
+            document.getElementById('result-title').innerText = bestProf.name;
+            document.getElementById('result-description').innerHTML = `
+                <p><strong>Почему именно эта профессия подходит вам:</strong></p>
+                <p class="text-slate-600 mt-2">${bestProf.points.desc}</p>
+                <p class="mt-4"><strong>С чего начать прямо сейчас (Быстрый старт):</strong></p>
+                <p class="text-slate-600 mt-2">${bestProf.points.fastStart}</p>
+            `;
+            document.getElementById('result-income').innerText = bestProf.points.incomePotential;
+            document.getElementById('result-difficulty').innerText = bestProf.points.difficulty;
+            document.getElementById('result-route').innerText = bestProf.points.careerPath;
+            
+            // Настраиваем ссылку перехода
+            document.getElementById('result-action-link').setAttribute('href', `#${bestProf.id}`);
+        }
+
+        function resetQuiz() {
+            currentQuestionIdx = 0;
+            initScores();
+            document.getElementById('question-block').classList.remove('hidden');
+            document.getElementById('result-block').classList.add('hidden');
+            renderQuestion();
+        }
+
+        // ЛОГИКА КАЛЬКУЛЯТОРА
+        function updateCalculator() {
+            const check = parseInt(document.getElementById('calc-check').value);
+            const projects = parseInt(document.getElementById('calc-projects').value);
+
+            // Форматирование вывода цен
+            document.getElementById('calc-check-display').innerText = `${check.toLocaleString()} ₽`;
+            document.getElementById('calc-projects-display').innerText = `${projects}`;
+
+            const total = check * projects;
+            document.getElementById('calc-total').innerText = `${total.toLocaleString()} ₽`;
+            
+            document.getElementById('calc-scen-1').innerText = `${total.toLocaleString()} ₽`;
+            document.getElementById('calc-scen-2').innerText = `${(total * 2).toLocaleString()} ₽`;
+        }
+
+        // Инициализация при загрузке страницы
+        window.onload = function() {
+            generateProfessions();
+            initScores();
+            renderQuestion();
+            updateCalculator();
+        };
+    </script>
+</body>
+</html>
